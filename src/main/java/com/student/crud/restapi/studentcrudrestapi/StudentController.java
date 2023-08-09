@@ -12,6 +12,31 @@ public class StudentController {
  
     @Autowired
     private StudentService service;
+
+    // Health check
+    @GetMapping(path = "/")
+    public String healthCheck(){
+        return "<div align=\"center\" style=\"padding: 20px 10px;background-color: #4477CE;\">\r\n" + //
+                "  <h1>SmartByte</h1>\r\n" + //
+                "</div>\r\n" + //
+                "<div align=\"center\" style=\"margin:25px 50px;padding: 10px 5px;background-color: #35155D;border-radius: 20px;\">\r\n" + //
+                "  <h4 style=\"color: white;\">\u2713 Health Okay</h4>\r\n" + //
+                "</div>";
+    }
+
+    // GET
+    // URI - /hello-world
+    // Method - "Hello World"
+    // @RequestMapping(method = RequestMethod.GET, path = "/hello-world")
+    @GetMapping(path = "/hello-world")
+    public String helloWorld(){
+        return "<div align=\"center\" style=\"padding: 20px 10px;background-color: #4477CE;\">\r\n" + //
+                "  <h1>SmartByte</h1>\r\n" + //
+                "</div>\r\n" + //
+                "<div align=\"center\" style=\"margin:25px 50px;padding: 10px 5px;background-color: #FAC55B;border-radius: 20px;\">\r\n" + //
+                "  <h4>Hello Student</h4>\r\n" + //
+                "</div>";
+    }
      
     // RESTful API methods for Retrieval operations
     @GetMapping("/students")
